@@ -6,31 +6,32 @@ from launch_ros.descriptions import ComposableNode
 def generate_launch_description():
   """Generate launch description for ublox_dgnss components."""
   params_base= [
-            {'DEVICE_SERIAL_STRING': "Test Base"},
+            {'DEVICE_SERIAL_STRING': "esab"}, # name comes from right to left after converting to hext 
             {'FRAME_ID': "base"},
 
-            # config measurement interval to 200 ms (ie 5 Hz) and nav update rate to once per measurement
+            # # config measurement interval to 200 ms (ie 5 Hz) and nav update rate to once per measurement
+            # {'CFG_RATE_MEAS': 0x3e8}, #1000ms
             {'CFG_RATE_MEAS': 0xc8},
             {'CFG_RATE_NAV': 0x1},
 
-            # disable all messages on UART1
-            {'CFG_UART1INPROT_NMEA': False},
-            {'CFG_UART1INPROT_RTCM3X': False},
-            {'CFG_UART1INPROT_UBX': False},
-            {'CFG_UART1OUTPROT_NMEA': False},
-            {'CFG_UART1OUTPROT_RTCM3X': False},
-            {'CFG_UART1OUTPROT_UBX': False},
+            # # disable all messages on UART1
+            # {'CFG_UART1INPROT_NMEA': False},
+            # {'CFG_UART1INPROT_RTCM3X': False},
+            # {'CFG_UART1INPROT_UBX': False},
+            # {'CFG_UART1OUTPROT_NMEA': False},
+            # {'CFG_UART1OUTPROT_RTCM3X': False},
+            # {'CFG_UART1OUTPROT_UBX': False},
 
             # set UART2 baud rate to 460800
             {'CFG-UART2-BAUDRATE': 0x70800},
 
-            # send RTCM messages only (to rover) on UART2
-            {'CFG_UART2INPROT_NMEA': False},
-            {'CFG_UART2INPROT_RTCM3X': False},
-            {'CFG_UART2INPROT_UBX': False},
-            {'CFG_UART2OUTPROT_NMEA': False},
-            {'CFG_UART2OUTPROT_RTCM3X': True},
-            {'CFG_UART2OUTPROT_UBX': False},
+            # # send RTCM messages only (to rover) on UART2
+            # {'CFG_UART2INPROT_NMEA': False},
+            # {'CFG_UART2INPROT_RTCM3X': False},
+            # {'CFG_UART2INPROT_UBX': False},
+            # {'CFG_UART2OUTPROT_NMEA': False},
+            # {'CFG_UART2OUTPROT_RTCM3X': True},
+            # {'CFG_UART2OUTPROT_UBX': False},
 
             # RTCM and UBX messages as required on USB
             {'CFG_USBINPROT_NMEA': False},

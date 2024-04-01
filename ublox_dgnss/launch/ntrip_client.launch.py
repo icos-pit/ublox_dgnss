@@ -11,22 +11,22 @@ def generate_launch_description():
   """Generate launch description for ublox_dgnss components."""
 
   use_https_arg = DeclareLaunchArgument(
-    "use_https", default_value=TextSubstitution(text="true")
+    "use_https", default_value=TextSubstitution(text="false")
   )
   host_arg = DeclareLaunchArgument(
-    "host", default_value=TextSubstitution(text="ntrip.data.gnss.ga.gov.au")
+    "host", default_value=TextSubstitution(text="91.198.76.2")
   )
   port_arg = DeclareLaunchArgument(
-    "port", default_value=TextSubstitution(text="443")
+    "port", default_value=TextSubstitution(text="8086")
   )
   mountpoint_arg = DeclareLaunchArgument(
-    "mountpoint", default_value=TextSubstitution(text="MBCH00AUS0")
+    "mountpoint", default_value=TextSubstitution(text="BOR1_RTCM_3_2")
   )
   username_arg = DeclareLaunchArgument(
-    "username", default_value=EnvironmentVariable(name="NTRIP_USERNAME", default_value="noname")
+    "username", default_value=EnvironmentVariable(name="NTRIP_USERNAME", default_value="iman01")
   )
   password_arg = DeclareLaunchArgument(
-    "password", default_value=EnvironmentVariable(name="NTRIP_PASSWORD", default_value="password")
+    "password", default_value=EnvironmentVariable(name="NTRIP_PASSWORD", default_value="Iman0101")
   )
   params = [{
     'use_https': LaunchConfiguration('use_https'),
