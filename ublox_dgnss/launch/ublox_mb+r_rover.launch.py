@@ -61,7 +61,7 @@ def generate_launch_description():
         package='ublox_dgnss_node',
         plugin='ublox_dgnss::UbloxDGNSSNode',
         name='ublox_dgnss',
-        namespace='rover',
+        namespace='ublox_rover',
         parameters=params_rover
       )
     ]
@@ -76,7 +76,7 @@ def generate_launch_description():
       ComposableNode(
         package='ublox_nav_sat_fix_hp_node',
         plugin='ublox_nav_sat_fix_hp::UbloxNavSatHpFixNode',
-        namespace='rover',
+        namespace='ublox_rover',
         name='ublox_nav_sat_fix_hp'
       )
     ]
